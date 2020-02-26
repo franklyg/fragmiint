@@ -5,9 +5,9 @@ const preferDefault = m => m && m.default || m
 
 
 exports.components = {
-  "component---src-templates-product-page-js": hot(preferDefault(require("/Users/default/Projects/Personal/fragmiint_web/fragmiint/src/templates/product-page.js"))),
   "component---src-templates-index-page-js": hot(preferDefault(require("/Users/default/Projects/Personal/fragmiint_web/fragmiint/src/templates/index-page.js"))),
   "component---src-templates-blog-post-js": hot(preferDefault(require("/Users/default/Projects/Personal/fragmiint_web/fragmiint/src/templates/blog-post.js"))),
+  "component---src-templates-product-page-js": hot(preferDefault(require("/Users/default/Projects/Personal/fragmiint_web/fragmiint/src/templates/product-page.js"))),
   "component---src-templates-about-page-js": hot(preferDefault(require("/Users/default/Projects/Personal/fragmiint_web/fragmiint/src/templates/about-page.js"))),
   "component---src-templates-tags-js": hot(preferDefault(require("/Users/default/Projects/Personal/fragmiint_web/fragmiint/src/templates/tags.js"))),
   "component---cache-dev-404-page-js": hot(preferDefault(require("/Users/default/Projects/Personal/fragmiint_web/fragmiint/.cache/dev-404-page.js"))),
