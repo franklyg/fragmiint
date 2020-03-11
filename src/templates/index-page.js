@@ -26,7 +26,8 @@ export const IndexPageTemplate = ({
         backgroundAttachment: `fixed`,
       }}
     >
-      <div
+    <img src="img/fragmiint.svg" class="logo" alt="Fragmiint"/>
+      {/*}<div
         style={{
           display: 'flex',
           height: '150px',
@@ -62,7 +63,7 @@ export const IndexPageTemplate = ({
         >
           {subheading}
         </h3>
-      </div>
+      </div>*/}
     </div>
     <section className="section section--gradient">
       <div className="container">
@@ -84,14 +85,6 @@ export const IndexPageTemplate = ({
                       {heading}
                     </h3>
                     <p>{description}</p>
-                  </div>
-                </div>
-                <Features gridItems={intro.blurbs} />
-                <div className="columns">
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/products">
-                      See all products
-                    </Link>
                   </div>
                 </div>
                 <div className="column is-12">

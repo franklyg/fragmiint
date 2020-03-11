@@ -54,7 +54,7 @@
 
 .full-width-image-container {
   width: 100vw;
-  height: 400px;
+  height: 100vh;
   position: relative;
   left: 50%;
   right: 50%;
@@ -67,7 +67,7 @@
 
 .full-width-image {
   width: 100vw;
-  height: 400px;
+  height: 100vh;
   background-size: cover;
   background-position: bottom;
   display: flex;
@@ -7298,6 +7298,101 @@ label.panel-block {
 .footer {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
+
+.ham-menu {
+  width: 30px;
+  cursor: pointer;
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  z-index: 11; }
+  .ham-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin: .3em;
+    background: #242424;
+    -webkit-transition: .5s all;
+    transition: .5s all; }
+
+.ham-menu.is-active span:first-child {
+  width: 85%; }
+
+.ham-menu.is-active span:nth-child(2) {
+  width: 65%; }
+
+.ham-menu.is-active span:last-child {
+  width: 10%; }
+
+.navbar {
+  position: fixed;
+  background: transparent; }
+  .navbar .navbar-inner {
+    width: 100%;
+    height: 100vh;
+    top: -100vh;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    z-index: 10; }
+    .navbar .navbar-inner .container {
+      flex-flow: column wrap;
+      justify-content: center;
+      visibility: hidden; }
+      .navbar .navbar-inner .container .nav-holder .nav-links {
+        padding: 2.5em; }
+        .navbar .navbar-inner .container .nav-holder .nav-links .navbar-item {
+          font-size: 3.5rem;
+          color: #000;
+          font-weight: 600;
+          text-transform: lowercase;
+          opacity: 0;
+          -webkit-transition: all .5s;
+          transition: all .5s;
+          top: -1em;
+          position: relative; }
+  .navbar.is-active {
+    background: #fff;
+    top: 0; }
+    .navbar.is-active .container {
+      visibility: visible; }
+      .navbar.is-active .container .nav-holder .nav-links .navbar-item {
+        opacity: 1;
+        top: 0; }
+        .navbar.is-active .container .nav-holder .nav-links .navbar-item.navbar-item-1 {
+          -webkit-transition-delay: 0.56667s;
+                  transition-delay: 0.56667s; }
+        .navbar.is-active .container .nav-holder .nav-links .navbar-item.navbar-item-2 {
+          -webkit-transition-delay: 0.63333s;
+                  transition-delay: 0.63333s; }
+        .navbar.is-active .container .nav-holder .nav-links .navbar-item.navbar-item-3 {
+          -webkit-transition-delay: 0.7s;
+                  transition-delay: 0.7s; }
+        .navbar.is-active .container .nav-holder .nav-links .navbar-item.navbar-item-4 {
+          -webkit-transition-delay: 0.76667s;
+                  transition-delay: 0.76667s; }
+        .navbar.is-active .container .nav-holder .nav-links .navbar-item.navbar-item-5 {
+          -webkit-transition-delay: 0.83333s;
+                  transition-delay: 0.83333s; }
+        .navbar.is-active .container .nav-holder .nav-links .navbar-item.navbar-item-6 {
+          -webkit-transition-delay: 0.9s;
+                  transition-delay: 0.9s; }
+
+.blog-list-item {
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  border-bottom: 3px solid black; }
+  .blog-list-item p {
+    color: #000; }
+  .blog-list-item a:not(.button):not(.dropdown-item) {
+    text-decoration: none; }
+  .blog-list-item .title:not(.is-spaced) + .subtitle {
+    display: block;
+    margin: 0; }
+  .blog-list-item .button {
+    padding: 0;
+    border: none;
+    background: transparent; }
 
 @media screen and (min-width: 769px) and (max-width: 1023px) {
   .blog-list-item .featured-thumbnail {

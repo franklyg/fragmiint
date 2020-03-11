@@ -12,6 +12,8 @@ const Navbar = class extends React.Component {
     }
   }
 
+
+
   toggleHamburger = () => {
     // toggle the active boolean in the state
     this.setState(
@@ -32,6 +34,17 @@ const Navbar = class extends React.Component {
     )
   }
 
+  componentWillUpdate(){
+    if(this.state.navBarActiveClass == 'is-active') {
+      document.body.style.position = 'static'
+    }
+  }
+  componentDidUpdate(){
+    if(this.state.navBarActiveClass == 'is-active') {
+      document.body.style.position = 'fixed'
+    }
+  }
+
   render() {
     return (
       <nav
@@ -39,56 +52,46 @@ const Navbar = class extends React.Component {
         role="navigation"
         aria-label="main-navigation"
       >
-        <div className="container">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
-            </Link>
-            {/* Hamburger menu */}
+        <div className={`navbar-inner navbar ${this.state.navBarActiveClass}`}>
+          <div className="container">
             <div
-              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-              data-target="navMenu"
-              onClick={() => this.toggleHamburger()}
+              className="nav-holder"
             >
-              <span />
-              <span />
-              <span />
+              <div className="nav-links">
+                <Link className="navbar-item navbar-item-1" to="/">
+                  <img src={logo}/>
+                </Link>
+                <Link className="navbar-item navbar-item-2" to="/about">
+                  About
+                </Link>
+                <Link className="navbar-item navbar-item-3" to="/shows">
+                  Music
+                </Link>
+                <Link className="navbar-item navbar-item-3" to="/shows">
+                  Shows
+                </Link>
+                <Link className="navbar-item navbar-item-4" to="/products">
+                  Products
+                </Link>
+                <Link className="navbar-item navbar-item-5" to="/blog">
+                  News
+                </Link>
+                <Link className="navbar-item navbar-item-6" to="/contact">
+                  Contact
+                </Link>
+              </div>
             </div>
           </div>
-          <div
-            id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
-          >
-            <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
-              <Link className="navbar-item" to="/products">
-                Products
-              </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
-              </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
-              </Link>
-            </div>
-            <div className="navbar-end has-text-centered">
-              <a
-                className="navbar-item"
-                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="icon">
-                  <img src={github} alt="Github" />
-                </span>
-              </a>
-            </div>
-          </div>
+        </div>
+        {/* Hamburger menu */}
+        <div
+          className={`ham-menu ${this.state.navBarActiveClass}`}
+          data-target="navMenu"
+          onClick={() => this.toggleHamburger()}
+        >
+          <span />
+          <span />
+          <span />
         </div>
       </nav>
     )

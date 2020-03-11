@@ -9,6 +9,9 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
 
   return (
     <section className="section section--gradient">
+      <header className="container about-header">
+        <h1>who is fragmiint?</h1>
+      </header>
       <div className="container">
         <div className="columns">
           <div className="column is-10 is-offset-1">

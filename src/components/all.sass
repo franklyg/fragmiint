@@ -46,8 +46,6 @@ $black: #2b2523
           display: block
           margin: auto;
 
-
-
 .navbar .navbar-menu
   box-shadow:none !important
 
@@ -69,7 +67,7 @@ $black: #2b2523
 // Helper Classes
 .full-width-image-container
   width: 100vw
-  height: 400px
+  height: 100vh
   position: relative
   left: 50%
   right: 50%
@@ -82,7 +80,7 @@ $black: #2b2523
 
 .full-width-image
     width: 100vw
-    height: 400px
+    height: 100vh
     background-size: cover
     background-position: bottom
     display: flex
@@ -163,6 +161,91 @@ $menu-label-color: $white-ter
 
 @import "~bulma"
 
+// Hamburger button
+
+.ham-menu
+  width: 30px
+  cursor: pointer
+  position: fixed
+  top: 1em
+  right: 1em
+  z-index: 11
+  span
+    display: block
+    width: 100%
+    height: 3px
+    margin: .3em
+    background: #242424
+    transition: .5s all
+.ham-menu.is-active
+  span
+    &:first-child
+      width: 85%
+    &:nth-child(2)
+      width: 65%
+    &:last-child
+      width: 10%
+
+// Navigation Overwrite
+.navbar
+  position: fixed
+  background: transparent
+  .navbar-inner
+    width: 100%
+    height: 100vh
+    top: -100vh
+    transition: all .5s
+    z-index: 10
+    .container
+      flex-flow: column wrap
+      justify-content: center
+      visibility: hidden
+      .nav-holder
+        .nav-links
+          padding: 2.5em
+          .navbar-item
+            font-size: 3.5rem
+            color: #000
+            font-weight: 600
+            text-transform: lowercase
+            opacity: 0
+            transition: all .5s
+            top: -1em
+            position: relative
+  &.is-active
+    background: #fff
+    top: 0
+    .container
+      visibility: visible
+      .nav-holder
+        .nav-links
+          .navbar-item
+            opacity: 1
+            top: 0
+            @for $i from 1 through 6
+              &.navbar-item-#{$i}
+                transition-delay: #{.5 + ($i/15)}s
+
+
+// Blog Item
+
+.blog-list-item
+  background-color: transparent
+  box-shadow: none
+  border-radius: 0
+  border-bottom: 3px solid black
+  p
+    color: #000;
+
+  a:not(.button):not(.dropdown-item)
+    text-decoration: none
+  .title:not(.is-spaced) + .subtitle
+    display: block
+    margin: 0
+  .button
+    padding: 0
+    border: none
+    background: transparent
 
 // responsiveness
 +tablet-only
